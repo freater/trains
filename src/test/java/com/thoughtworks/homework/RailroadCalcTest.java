@@ -26,29 +26,29 @@ public class RailroadCalcTest {
      */
     @Test
     public void testAllScenarios() {
-        try{
+        try {
             distanceTest();
             tripsNumWithMaxStopsTest();
             tripsNumWithExactStopsTest();
             shortestDistanceTest();
             routeNumWithDistanceLimitTest();
-        }catch (TrainsDemoException trainsDemoException){
+        } catch (TrainsDemoException trainsDemoException) {
             System.out.println(trainsDemoException.getTrainsDemoExceptionMessages().getMassage());
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("unknown  exception");
         }
 
     }
 
     @Test
-    public void testException(){
-        try{
+    public void testException() {
+        try {
             IRailroad railroad = RailroadFactory.railroadDirectedGraph("AB5|BC4|CD8|DC8|DE6|AD5", RailroadFactory.PARSE_GRAPH_STRATEGY_NAME);
             RailroadCalc railroadCalc = new RailroadCalc(railroad);
-        }catch (TrainsDemoException trainsDemoException){
+        } catch (TrainsDemoException trainsDemoException) {
             Assert.assertEquals(trainsDemoException.getTrainsDemoExceptionMessages().getCode(), TrainsDemoExceptionMessages.INPUT_GRAPH_NOT_STANDARDIZED.getCode());
             System.out.println(trainsDemoException.getTrainsDemoExceptionMessages().getMassage());
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("unknown  exception");
         }
 
@@ -143,6 +143,5 @@ public class RailroadCalcTest {
         Assert.assertEquals(7, routeNum);
         PrintUtils.println("#10", routeNum);
     }
-
 
 }

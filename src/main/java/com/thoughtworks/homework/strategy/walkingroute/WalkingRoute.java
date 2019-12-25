@@ -35,7 +35,7 @@ public class WalkingRoute {
 
     /**
      * 递归找出符合条件的路线集合
-     * @param currRoute 当前站点，即已经找到的一条线路，如AB
+     * @param currRoute 当前路径，即已经找到的一条线路，如AB
      * @param currDistance 当前获得距离
      * @param destTown 目的站点
      * @param strategy 算法策略
